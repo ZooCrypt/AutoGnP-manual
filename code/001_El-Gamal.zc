@@ -4,7 +4,7 @@ adversary A_ddh : (G * G * G) -> Bool.
 
 assumption ddh ([x,y])
   [ x, y    <-$ Fq; b <- A_ddh(g^x,g^y,g^(x*y)); ]
-  [ x, y, t <-$ Fq; b <- A_ddh(g^x,g^y,g^t); ].
+  [ x, y, z <-$ Fq; b <- A_ddh(g^x,g^y,g^z); ].
 
 adversary A1 : G -> (G * G).
 adversary A2 : (G * G) -> Bool.
@@ -17,9 +17,9 @@ bound_adv [
   b <-$ Bool;
   let mb = (b?m0:m1);
     
-  x <-$ Fq;
-  let C1 = g ^x;
-  let C2 = mb*g^(a*x);
+  u <-$ Fq;
+  let C1 = g^u;
+  let C2 = mb*g^(a*u);
   b' <- A2(C1,C2);
 ] : b = b'.
 bycrush.
@@ -28,7 +28,7 @@ restart.
 
 unfold.
 move 4 2.
-abstract 3 arg (g^a,g^x,g^(a*x)).
+abstract 3 arg (g^a,g^u,g^(a*u)).
 assumption_decisional! ddh -> t.
 unfold.
 norm_unknown.

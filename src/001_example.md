@@ -16,22 +16,22 @@ give the definitions and a proof sketch as they would appear in a
 crypto textbook. The El-Gamal encryption scheme uses a cyclic group
 $\GG$ and we assume the decisional Diffie-Hellman problem is hard in
 this group. Namely, for all *efficient* adversaries $\AdvDDH$, it is
-*hard* to distinguish the triple $(g^a, g^b, g^{ab})$ from the triple
-$(g^a, g^b, g^c)$. Formally, this means we assume that the
+*hard* to distinguish the triple $(g^x, g^y, g^{xy})$ from the triple
+$(g^x, g^y, g^z)$. Formally, this means we assume that the
 following quantity is low:
 
 $$
 \left|
 \ProbGame{
-  \samp{a,b}{\Fq}  \\
-  \call{b}{\AdvDDH(g^a,g^b,g^{ab})}
+  \samp{x,y}{\Fq}  \\
+  \call{b}{\AdvDDH(g^x,g^y,g^{xy})}
 }{
   b = 1
 }
 -
 \ProbGame{
-  \samp{a,b,c}{\Fq}  \\
-  \gets{b}{\AdvDDH(g^a,g^b,g^c)}
+  \samp{x,y,z}{\Fq}  \\
+  \gets{b}{\AdvDDH(g^x,g^y,g^z)}
 }{
   b = 1
 }
