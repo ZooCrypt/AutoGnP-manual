@@ -1,0 +1,25 @@
+adversary A : () -> ().
+oracle Orcl : () -> ().
+
+bound_succ [
+  let x1 = ();
+  let x2 = ();
+  let x3 = ();
+  let x4 = ();
+  let x5 = ();
+  let x6 = ();
+  let x7 = ();
+  x8 <- A() with
+    Orcl() = {
+      let y1 = ();
+      let y2 = ();
+      let y3 = ();
+      let y4 = ();
+      let y5 = ();
+      let y6 = ();
+      let y7 = ();
+      return ();
+    };
+] : true.
+move [1 3] +4.
+///=.

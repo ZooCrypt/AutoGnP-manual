@@ -1,0 +1,6 @@
+adversary A1 : Bool -> Bool.
+adversary A2 : Fq -> Fq.
+adversary A3 : (G * G_1 * G_2 * G_3 * G_s * G_t * G_s1 * G_s2) -> ().
+adversary A4 : (BS_l1 * BS_l2 * G_l * G_k * G_ks99) -> ().
+
+permutation f : BS_l1.
