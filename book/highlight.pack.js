@@ -782,7 +782,8 @@ hljs.registerLanguage('autognp', function(hljs) {
       'adversary assumption qed operator return with print print_proof ' +
       'print_debug let extract bound_adv bound_succ bound_dist ' +
       'oracle bilinear_map random_oracle trans insert guard ' +
-      'restart ' +
+      'restart bound declare random_function synchronized_random_function ' +
+      'for '+
       'hybrid assert rename rnd_oracle unfold move assumption_decisional ' +
       'rnd_exp except rnd guess simp unfold dist_sym norm_solve abstract* ' +
       'abstract remove_ev last norm_unknown norm case_ev find split_ineq ' +
@@ -790,7 +791,7 @@ hljs.registerLanguage('autognp', function(hljs) {
       'assumption_decisional! rnd! abstract',
       literal:
         'bycrush bysimp assumption_computational dist_eq indep ' +
-        'assumption_computational! indep!'
+        'assumption_computational! indep! <- <-$'
     },
     illegal: /\/\/|>>/,
     lexemes: '[a-z_]\\w*!?',
@@ -818,11 +819,11 @@ hljs.registerLanguage('autognp', function(hljs) {
       },
       { /* module or constructor */
         className: 'type',
-        begin: '\\b[A-Z][\\w\']*',
+        begin: '##\\b[A-Z][\\w\']*',
         relevance: 0
       },
       { /* don't color identifiers, but safely catch all identifiers with '*/
-        begin: '[a-z_]\\w*\'[\\w\']*', relevance: 0
+        begin: '[A-za-z_]\\w*\'[\\w\']*', relevance: 0
       },
       hljs.inherit(hljs.APOS_STRING_MODE, {className: 'string', relevance: 0}),
       hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null}),
