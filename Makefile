@@ -1,6 +1,6 @@
 PANDOC = pandoc
 IFORMAT = markdown
-FLAGS = --standalone --toc --toc-depth=2 --mathjax=$(MATHJAX) --highlight-style tango
+FLAGS = --standalone --toc --toc-depth=2 --mathjax=$(MATHJAX)
 STYLE = css/style.css
 FILTER = includes.hs
 ifdef MATHJAX_LOCAL

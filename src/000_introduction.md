@@ -62,7 +62,8 @@ Acknowledgements
 This book is built using [pandoc](http://www.pandoc.org) and the setup
 and templates are based on Stephen Diehl's book [Write you a
 Haskell](http://somewhere.org) and the [Rust
-book](http://www.rustlang.org).
+book](http://www.rustlang.org). We use an adapted version of
+[highlight.js](https://highlightjs.org/) for syntax highlighting.
 
 Installation
 ------------

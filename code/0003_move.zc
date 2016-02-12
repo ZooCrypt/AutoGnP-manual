@@ -20,6 +20,10 @@ bound_succ [
       let y7 = ();
       return ();
     };
-] : true.
-move [1 3] +4.
+] : x1 = x7.
+move [1 3] +4.   restart. (* move range from 1 to 3 *)
+case_ev (true).
+
+move [x1 x3] x7. restart.
+
 ///=.
